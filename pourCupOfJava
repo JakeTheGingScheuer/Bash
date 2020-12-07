@@ -1,0 +1,50 @@
+#!/bin/bash -u
+
+function createDirectory()
+{
+  cd ~/Development/Java
+  mkdir "${projectName}"
+  cd "${projectName}"
+}
+
+function makeGradleProject() {
+  gradle init
+}
+
+function editGitIgnore() {
+
+  echo ".idea" >> ./.gitignore
+  echo ".DS_Store" >> ./.gitignore
+  echo "**.gradle" >> ./.gitignore
+  echo "gradle" >> ./.gitignore
+  echo "**.iml" >> ./.gitignore
+  echo "gradlew.bat" >> ./.gitignore
+  echo "gradlew" >> ./.gitignore
+  echo "out" >> ./.gitignore
+}
+
+function makeLocalRepo() {
+  git init
+  git add .
+  git commit -m "initial commit"
+}
+
+function buildAndOpen() {
+  idea build.gradle
+}
+
+function pour() {
+  createDirectory
+  makeGradleProject
+  editGitIgnore
+  makeLocalRepo
+  buildAndOpen
+}
+
+read -p 'Project Name: ' projectName
+read -p 'Create remote repository?:
+  1: Yes
+  2: No
+Enter Selection: ' isRemote
+
+pour

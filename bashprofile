@@ -1,0 +1,24 @@
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PATH:/Users/jacob.scheuer/Development/flutterSDK/flutter/bin"
+export PATH="$PATH:/Users/jacob.scheuer/.local/bin"
+export LOOPSERVERIPADDR="dogbert-bbbw.local"
+export ARTIFACTORY_USER="loop_publisher"
+export ARTIFACTORY_HOST="loopbypillar.jfrog.io"
+export ARTIFACTORY_PASSWORD=""
+export CSHARP_REPO="develop-local"
+export TF_VAR_postgres_password=""
+export POSTGRES_PASSWORD=""
+export CLUSTER_NAME="smartos-qa"
+export VISITOR_CHANNEL='#doorbell-test'
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jacob.scheuer/google-cloud-sdk/path.bash.inc' ]; then . '/Users/jacob.scheuer/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jacob.scheuer/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/jacob.scheuer/google-cloud-sdk/completion.bash.inc'; fi

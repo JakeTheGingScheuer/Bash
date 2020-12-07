@@ -1,0 +1,75 @@
+#!/bin/bash -u
+
+function leadSay()
+{
+  say -r 222 [[ pbas 40 ]] $@
+}
+
+function backupSay()
+{
+  say -r 150 [[ pbas 66 ]] $@
+}
+
+function iGetKnockedDown()
+{
+  for i in `seq 4`;do
+    leadSay I get knocked down
+    leadSay But I get up again
+    leadSay You\'re never gonna keep me down [[slnc 330]]
+  done
+}
+
+function pissing()
+{
+
+  backupSay Pissing the night away
+  backupSay Pissing the night away [[slnc 600]]
+}
+
+function talkingAboutDrinks()
+{
+  leadSay He drinks a whiskey drink
+  leadSay He drinks a vodka drink
+  leadSay He drinks a lager drink
+  leadSay He drinks a cider drink
+  leadSay He sings the songs that remind him of the good times
+  leadSay He sings the songs that remind of the better times
+}
+
+function dannyBoy()
+{
+  backupSay Oh, Danny boy
+  backupSay Danny boy
+  backupSay Danny boy
+}
+
+function cry()
+{
+  backupSay Don\'t cry for me
+  backupSay Next door neighbor
+}
+
+function outro()
+{
+  for i in `seq 4`;do
+    backupSay We\'ll be singing
+    backupSay When we\'re winning
+    backupSay Pissing the night away
+  done
+}
+
+function chumba()
+{
+  iGetKnockedDown
+  pissing
+  talkingAboutDrinks
+  dannyBoy
+  iGetKnockedDown
+  pissing
+  talkingAboutDrinks
+  cry
+  iGetKnockedDown
+  outro
+}
+
+chumba

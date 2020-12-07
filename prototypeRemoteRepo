@@ -1,0 +1,14 @@
+
+
+function makeRemoteRepo() {
+  if[[ ${isRemote} == 1 ]]; then
+    git remote add origin https://github.com/JakeTheGingScheuer/"${projectName}"
+    git push origin master
+  fi
+}
+
+function pour() {
+
+  makeRemoteRepo();
+
+}

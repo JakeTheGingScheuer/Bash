@@ -1,0 +1,34 @@
+#!/bin/bash -u
+
+function createDirectory(){
+  cd ~/Development/sharp
+  mkdir "${SolutionName}"
+  cd "${SolutionName}"
+}
+
+function setUpProject(){
+  dotnet new sln -n "${SolutionName}"
+  dotnet new console -n "${ProjectName}"
+  dotnet new xunit -n "${ProjectName}Tests"
+}
+
+function compile(){
+  dotnet sln "${SolutionName}.sln" add "${ProjectName}" "${ProjectName}Tests"
+  dotnet add "${ProjectName}Tests" reference "${ProjectName}"
+}
+
+function open(){
+  rider ~/Development/sharp/"${SolutionName}"
+}
+
+function shard() {
+  createDirectory
+  setUpProject
+  compile
+  open
+}
+
+read -p 'Solution Name: ' SolutionName
+read -p 'Project Name: ' ProjectName
+
+shard
